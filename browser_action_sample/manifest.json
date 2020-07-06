@@ -1,0 +1,26 @@
+{
+    "name": "Browser Action Sample",
+    "manifest_version": 2,
+    "version": "1.0",
+    "description": "Browser action sample.",
+    "permissions": [
+        "tabs",
+        "background",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["script.js"]
+        }
+    ],
+    "browser_action": {
+        "default_title": "icon title",
+        "default_icon": "icon128.png"
+    }
+}
